@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product Form</title>
+</head>
+<body>
+    <h2>Product Information</h2>
+    <!-- Form that sends data via POST to /submit endpoint -->
+    <form th:action="@{/submit}" method="post" th:object="${product}">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" placeholder="Enter product name" required/>
+        </div>
+        <div>
+            <label for="price">Price:</label>
+            <input type="number" id="price" th:field="*{price}" placeholder="Enter price" required/>
+        </div>
+        <div>
+            <label for="out_date">Out Date:</label>
+            <input type="date" id="out_date" th:field="*{out_date}" required/>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
